@@ -13,7 +13,6 @@ const NewsComponent = (props) => {
     const capitilize = (string) => {
         return string.charAt(0).toUpperCase() + string.slice(1);
     }
-    //document.title = `${capitilize(props.category)} - NewsMonkey`;
 
     const updateNews = async () => {
         props.setProgress(10);
@@ -35,7 +34,9 @@ const NewsComponent = (props) => {
     }
 
     useEffect(() => {
+        document.title = `${capitilize(props.category)} - NewsMonkey`;
         updateNews()
+        //eslint-disable-next-line
     }, []);
 
     const fetchMoreData = async () => {
