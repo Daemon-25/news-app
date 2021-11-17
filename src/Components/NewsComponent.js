@@ -60,16 +60,16 @@ const NewsComponent = (props) => {
                 hasMore={articles.length !== totalResults}
                 loader={<Spinner />}
             >
-                <div className="container">
-                    <div className="row">
-                        {articles.map((element) => {
-                            return <div className="col-md-4" key={element.url}>
-                                <NewsItem title={element.title ? element.title : ""} description={element.description ? element.description : ""} imageURL={element.urlToImage} newsURL={element.url} date={element.publishedAt} author={element.author} source={element.source.name}></NewsItem>
-                            </div>
-                        })}
-                    </div>
+            <div className="container">
+                <div className="row">
+                    {articles.map((element) => {
+                        return <div className="col-md-4" key={element.url}>
+                            <NewsItem title={element.title ? element.title : ""} description={element.description ? element.description : ""} imageURL={element.urlToImage} newsURL={element.url} date={element.publishedAt} author={element.author} source={element.source.name}></NewsItem>
+                        </div>
+                    })}
                 </div>
-            </InfiniteScroll>
+            </div>
+        </InfiniteScroll>
         </>
     )
 }
